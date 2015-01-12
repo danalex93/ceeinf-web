@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CEEINF - UTFSM Campus Santiago</title>
+	<meta charset="utf-8"> 
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="<%= image_path 'favicon.ico' %>" type="image/x-icon">
+	<link rel="icon" href="<%= image_path 'favicon.ico' %>" type="image/x-icon">
+</head>
+<body>
+	<aside>
+		<center>
+			<%= image_tag "logo.jpg", id: "logo" %>
+		</center>
+		<div id="siteMenu">
+			<p>MENÚ</p>
+			<%= link_to 'Inicio', root_path %>
+			<%= link_to 'Noticias', posts_path %>
+			<%= link_to 'Quiénes Somos', about_path %>
+			<%= link_to 'Documentos', '#' %>
+			<%= link_to 'Votaciones', '#' %>
+		</div>
+		<div id="socialMenu">
+			<p>REDES SOCIALES</p>
+			<a href="https://www.facebook.com/ceeinf?fref=ts">Facebook</a>
+			<a href="https://twitter.com/ceeinf">Twitter</a>
+			<a href="https://plus.google.com/u/0/112490837771016351812">Google+</a>
+		</div>
+		<div id="externalMenu">
+			<p>LINKS ÚTILES</p>
+			<a href="https://siga.usm.cl/pag/">SIGA</a>
+			<a href="http://moodle.inf.utfsm.cl/">Moodle</a>
+			<a href="http://aula.usm.cl/">Aula</a>
+			<a href="http://www.inf.utfsm.cl/">DI</a>
+			<a href="http://usm.cl/">UTFSM</a>
+		</div>
+	</aside>
+
+	<main>	
+		<header>
+			<h1>Centro de Estudiantes de Informática</h1>
+			<h2>Universidad Técnica Federico Santa María - Campus Santiago</h2>
+		</header>
+
+		<section>
+			<%= yield %>
+		</section>
+
+		<footer>
+			<p>Centro de Estudiantes de Informática de la Universidad Técnica Federico Santa María 2015. Desarrollado por <a href="http://github.com/danalex93">Daniel Morales Miguel</a>.</p>
+		</footer>
+	</main>
+</body>
+</html>
