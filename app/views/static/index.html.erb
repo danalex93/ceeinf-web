@@ -2,14 +2,19 @@
 
 <h2 id="sectionHeader">Inicio</h2>
 
-<article>
-	<h3>Bienvenidos</h3>
-	<small>Lunes 12 de Enero de 2015</small>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<% if @pinned_posts == nil or @pinned_posts.empty? %>
+	<p class="empty">
+		No existen noticias destacadas, puedes revisar más en la sección <%= link_to 'Noticias', posts_path %>.
 	</p>
-</article>
+	
+<% else %>
+	<% @pinned_posts.each do |post| %>
+		<article>
+			<h3><%= post.title %></h3>
+			<small><%= post.created_at.strftime("%d-%m-%Y a las %H:%M") %></small>
+			<p>
+				<%= post.content %>
+			</p>
+		</article>
+	<% end %>
+<% end %>
