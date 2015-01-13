@@ -1,29 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h2 id="sectionHeader">Noticias</h2>
 
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<% if @posts == nil or @posts.empty? %>
+  <p class="empty">
+    No existen noticias aún.
+  </p>
+  
+<% else %>
+  <% @posts.each do |post| %>
+    <article>
+      <h3><%= post.title %></h3>
+      <small><%= post.created_at.strftime("%d-%m-%Y a las %H:%M") %></small>
+      <p>
+        <%= raw(post.content) %>
+      </p>
+      <% if user_signed_in? %>
+        <%= link_to 'Editar Noticia', edit_post_path(post) %> | <%= link_to 'Eliminar Noticia', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </article>
+  <% end %>
+<% end %>

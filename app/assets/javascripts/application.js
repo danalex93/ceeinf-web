@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require froala_editor.min.js
 //= require turbolinks
 //= require_tree .
+
+$(document).on('ready' , ceeinf);
+
+function ceeinf(){
+	$('textarea').editable({
+		inlineMode: false,
+		width: '200%',
+		heigth: '20em',
+	});
+}

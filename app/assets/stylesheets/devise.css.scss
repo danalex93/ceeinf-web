@@ -1,0 +1,64 @@
+$red: #d60000;
+$yellow: #fbbf2d;
+$lightgrey: #ececec;
+$grey: #b7b7b7;
+$darkgrey: #727272;
+
+$extrasmall: 12px;
+$small: 14px;
+$regular: 16px;
+$medium: 24px;
+$big: 34px;
+$extra: 45px;
+
+$black-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+$light-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+$red-shadow: 0px 3px 5px 0px rgba(214, 0, 0, 0.3);
+$yellow-shadow: 0px 3px 5px 0px rgba(251, 191, 45, 0.3);
+
+$border-radius: 3px;
+
+$facebook: #3b5998;
+$google: #dd4b39;
+
+form {
+	width: 20em;
+
+	input[type="text"] , input[type="password"]  , input[type="email"] {
+		width: 100%;
+		padding: 0 0 $extrasmall 0;
+		border: none;
+		border-bottom: 1px solid $grey;
+		background: 0;
+		margin: 0 0 $extrasmall 0;
+		outline: 0;
+
+	}
+
+	input[type="submit"], a {
+		background: #ffbf45;
+		padding: $small*0.5 $small;
+		border: none;
+		border-radius: $border-radius;
+		box-shadow: $red-shadow;
+		outline: 0;
+		font-size: 12px;
+		text-decoration: none;
+		color: inherit;
+
+		&:active {
+			box-shadow: none;
+		}
+	}
+
+	a.forgot-password{
+		display: block;
+		margin-top: 1em;
+		color: black;
+		opacity: 0.75;
+		font-size: 14px;
+		border-bottom: 1px dotted #333333;
+		text-decoration: none;
+		width: 12.7em;
+	}
+}

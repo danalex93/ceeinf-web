@@ -1,0 +1,28 @@
+<h2 id="sectionHeader">Regístrate</h2>
+
+<article>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <% flash.now[:alert] = devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email, 'E-mail' %>
+    <%= f.email_field :email, autofocus: true , :placeholder => "Correo electrónico" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, 'Contraseña:' %>
+    <% if @validatable %>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off" , :placeholder => "Clave (mínimo 8 caracteres)" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, 'Confirma tu contraseña:' %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" , :placeholder => "••••••••" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Crear mi cuenta" %>
+  </div>
+<% end %>
+</article>

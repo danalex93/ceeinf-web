@@ -37,6 +37,15 @@
 			<a href="http://www.inf.utfsm.cl/">DI</a>
 			<a href="http://usm.cl/">UTFSM</a>
 		</div>
+		<% if user_signed_in? %>
+			<div id="userMenu">
+				<p>CEEINF</p>
+				<%= link_to 'Nueva Noticia', new_post_path %>
+				<%= link_to 'Nuevo Documento', '#' %>
+				<%= link_to 'Administrar Votaciones', '#' %>
+				<%= link_to 'Cerrar Sesión',  destroy_user_session_path, method: :delete %>
+			</div>
+		<% end %>
 	</aside>
 
 	<main>	

@@ -11,7 +11,7 @@
 			<h3><%= post.title %></h3>
 			<small><%= post.created_at.strftime("%d-%m-%Y a las %H:%M") %></small>
 			<p>
-				<%= post.content %>
+				<%= raw(post.content) %>
 			</p>
 		</article>
 	<% end %>

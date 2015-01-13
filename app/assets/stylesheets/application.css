@@ -12,6 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
+ *= require font-awesome
  */
 
 body{
@@ -129,6 +132,11 @@ main > section > article > p{
 	font-weight: 200;
 	font-size: 16px;
 	text-align: justify;
+}
+
+main > section > article > a{
+	text-decoration: none;
+	color: inherit;
 }
 
 main > footer{

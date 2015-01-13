@@ -1,0 +1,20 @@
+<h2 id="sectionHeader">Conéctate</h2>
+
+<article>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true  , :placeholder => "Correo electrónico" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" , :placeholder => "Contraseña" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Iniciar Sesión" %>
+  </div>
+<% end %>
+
+</article>

@@ -1,0 +1,14 @@
+<h1>¿Se te olvidó tu contraseña?</h1>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true , :placeholder => "Correo electrónico" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Envíame mi nueva contraseña por correo electrónico" %>
+  </div>
+<% end %>

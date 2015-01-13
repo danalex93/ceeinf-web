@@ -12,17 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, 'Título' %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
+    <%= f.label :content, 'Contenido' %><br>
     <%= f.text_area :content %>
   </div>
   <div class="field">
     <%= f.check_box :pinned %>
     <%= f.label :pinned, '¿Destacada?' %>
   <div class="actions">
-    <%= f.submit %>
+    <% if params[:action] == 'new' %>
+      <%= f.submit 'Crear Noticia' %>
+    <% else %>
+      <%= f.submit 'Editar Noticia' %>
+    <% end %>
   </div>
 <% end %>
