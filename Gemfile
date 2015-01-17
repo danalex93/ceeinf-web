@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0.beta2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,3 +58,11 @@ gem "omniauth-google-oauth2"
 
 gem "wysiwyg-rails"
 gem 'font-awesome-rails'
+
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano3-unicorn'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv'
+
+gem 'unicorn'
