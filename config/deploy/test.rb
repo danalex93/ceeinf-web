@@ -22,7 +22,7 @@ set :pty,  false
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'ceeinf.cl', user: 'deploy', roles: %w{web app db}, port: 22
+server 'ceeinf.cl', user: 'deploy', roles: %w{web app db}, port: 3102
 
 # Custom SSH Options
 # ==================
